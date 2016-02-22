@@ -31,24 +31,19 @@ public class Field {
 
     }
 
-    /*public static void instructions() {
+    public static Picture instructions() {
 
         int x = ((width-width/2)/2) + MARGIN;
         int y = ((height-height/2)/2) + MARGIN;
 
-        Rectangle rectangle = new Rectangle(x, y, width/2, height/2 );
-        rectangle.setColor(Color.PINK);
-        rectangle.fill();
+        Picture instructions = new Picture(x, y, "sources/instructions.jpg");
+        instructions.draw();
+        return instructions;
+    }
 
-        Text phrase1 = new Text(x, y+MARGIN, "GREEN changes direction with WASD keys");
-        Text phrase2 = new Text(x, y+3*MARGIN, "ORANGE changes direction with the ARROW keys");
-        Text phrase3 = new Text(x, y+9*MARGIN, "Collect as many berries as tou can! If you touch the YELLOW monsters you'll die!");
-        Text phrase4 = new Text(x, y+12*MARGIN, "[PRESS THE SPACE BAR TO START MOVING]");
-        phrase1.draw();
-        phrase2.draw();
-        phrase3.draw();
-        phrase4.draw();
-    }*/
+    public static void delete(Picture picture) {
+        picture.delete();
+    }
 
     public static void placard(ControlledMonster green, ControlledMonster orange) {
 

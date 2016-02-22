@@ -11,8 +11,8 @@ import java.net.URL;
 public class Sound {
 
     public static void play(String string) {
+
         String pathStr = string;
-        //String pathStr = "/sources/collect.wav";
 
         // to load from jar
         URL soundURL = Sound.class.getResource(pathStr);

@@ -6,6 +6,7 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class Game implements KeyboardHandler {
@@ -21,6 +22,12 @@ public class Game implements KeyboardHandler {
     private int delay;
     private boolean start;
 
+    /**
+     * Constructs the game field
+     * @param width the width of the field
+     * @param height the height of the field
+     * @param delay the delay time of the game loop
+     */
     public Game(int width, int height, int delay) {
 
         Field.init(width, height);
@@ -46,6 +53,10 @@ public class Game implements KeyboardHandler {
         }
     }
 
+    /**
+     * Creates the players monsters and the array of Yellow monsters and Berries
+     * and randomly puts them in the field
+     */
     public void init() {
 
         createCollidablesArray();
@@ -58,6 +69,10 @@ public class Game implements KeyboardHandler {
 
     }
 
+    /**
+     * Starts the animation
+     * @throws InterruptedException
+     */
     public void start() throws InterruptedException {
 
         boolean stop = true;
@@ -67,6 +82,12 @@ public class Game implements KeyboardHandler {
         for (Monster c : monsters) {
             c.getDetector().arrangeCollidables(c);
         }
+
+        Picture instructions = Field.instructions();
+
+        Thread.sleep(5000);
+
+        Field.delete(instructions);
 
         while (stop) {
 
