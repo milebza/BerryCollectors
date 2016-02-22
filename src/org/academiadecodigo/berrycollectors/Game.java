@@ -55,7 +55,7 @@ public class Game implements KeyboardHandler {
 
     /**
      * Creates the players monsters and the array of Yellow monsters and Berries
-     * and randomly puts them in the field
+     * randomly puts them in the field
      */
     public void init() {
 
@@ -84,9 +84,7 @@ public class Game implements KeyboardHandler {
         }
 
         Picture instructions = Field.instructions();
-
-        Thread.sleep(5000);
-
+        Thread.sleep(7000);
         Field.delete(instructions);
 
         while (stop) {

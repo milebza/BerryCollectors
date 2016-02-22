@@ -19,7 +19,6 @@ public class Sound {
 
         AudioInputStream inputStream = null;
 
-        //System.out.println("absolutePath: "+pathStr);
         try {
 
             if(soundURL == null){

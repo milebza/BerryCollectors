@@ -15,14 +15,21 @@ public class Field {
     private static int width;
     private static int height;
 
+    /** @return the width of the field*/
     public static int getWidth() {
         return width;
     }
 
+    /** @return the height of the field*/
     public static int getHeight() {
         return height;
     }
 
+    /**
+     * Creates a field
+     * @param width the width of the field
+     * @param height the height of the field
+     */
     public static void init(int width, int height) {
         Field.width = width;
         Field.height = height;
@@ -45,6 +52,11 @@ public class Field {
         picture.delete();
     }
 
+    /**
+     * Creates a placard showing the winner
+     * @param green
+     * @param orange
+     */
     public static void placard(ControlledMonster green, ControlledMonster orange) {
 
         int widthRec = width/4+width/8;
