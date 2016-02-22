@@ -11,7 +11,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Game implements KeyboardHandler {
 
-    public static final int MANUFACTURED_MONSTERS = 12;
+    public static final int MANUFACTURED_MONSTERS = 10;
     public static final int BERRIES = 20;
 
     private Collidable[] collidables;

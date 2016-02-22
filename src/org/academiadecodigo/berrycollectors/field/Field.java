@@ -40,8 +40,8 @@ public class Field {
 
     public static Picture instructions() {
 
-        int x = ((width-width/2)/2) + MARGIN;
-        int y = ((height-height/2)/2) + MARGIN;
+        int x = ((width-500)/2) + MARGIN;
+        int y = ((height-400)/2) + MARGIN;
 
         Picture instructions = new Picture(x, y, "sources/instructions.jpg");
         instructions.draw();
