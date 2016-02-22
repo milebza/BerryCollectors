@@ -31,7 +31,7 @@ public class Field {
 
     }
 
-    public static void instructions() {
+    /*public static void instructions() {
 
         int x = ((width-width/2)/2) + MARGIN;
         int y = ((height-height/2)/2) + MARGIN;
@@ -48,7 +48,7 @@ public class Field {
         phrase2.draw();
         phrase3.draw();
         phrase4.draw();
-    }
+    }*/
 
     public static void placard(ControlledMonster green, ControlledMonster orange) {
 

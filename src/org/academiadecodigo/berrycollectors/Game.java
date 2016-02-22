@@ -68,8 +68,6 @@ public class Game implements KeyboardHandler {
             c.getDetector().arrangeCollidables(c);
         }
 
-        Field.instructions();
-
         while (stop) {
 
             Thread.sleep(delay);

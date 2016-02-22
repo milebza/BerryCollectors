@@ -3,7 +3,7 @@
 
     <!-- Initialize build properties  -->
     <target name="init" description="Initializes properties">
-        <property name="project.name" value="CarCrash" />
+        <property name="project.name" value="BerryCollectors" />
         <property name="src.dir" value="src" />
         <property name="main.class" value="org.academiadecodigo.berrycollectors.Main" />
         <property name="build.dir" value="build" />
