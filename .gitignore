@@ -1,4 +1,4 @@
-reated by https://www.gitignore.io/api/windows,intellij,osx
+created by https://www.gitignore.io/api/windows,intellij,osx
 
 ### Windows ###
 # Windows image file caches
@@ -58,6 +58,7 @@ $RECYCLE.BIN/
 
 # IntelliJ
 /out/
+/build/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -99,15 +100,15 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-C
 
 
-A
-A
-A
-A
-A
-A
+
+
+
+
+
+
+
 A
 A
 A
