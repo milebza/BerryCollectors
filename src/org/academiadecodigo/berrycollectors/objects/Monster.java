@@ -16,6 +16,11 @@ abstract public class Monster implements Collidable {
     private boolean crashed;
     private CollisionDetector detector;
 
+    /**
+     * Constructs a Monster with a random direction
+     * @param representation the representation
+     * @param collidableType the collidable type
+     */
     public Monster(Representation representation, CollidableType collidableType) {
 
         direction = chooseDirection();
@@ -62,10 +67,15 @@ abstract public class Monster implements Collidable {
         representation.getPicture().load(representation.getPicsPath()[1]);
     }
 
+    /**
+     * Creates a collision detector
+     * @param collidables the array of collidables to check if there are collisions
+     */
     public void createCollisionDetector(Collidable[] collidables) {
         detector = new CollisionDetector(collidables);
     }
 
+    /** Moves the monster */
     public void move() {
 
         if (isCrashed()) {
@@ -96,6 +106,10 @@ abstract public class Monster implements Collidable {
 
     }
 
+    /**
+     * Chooses a direction
+     * @return a direction
+     */
     public Direction chooseDirection() {
 
         direction = Direction.choose();

@@ -11,16 +11,15 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
  */
 public class Field {
 
+    /** The margin of the SimpleGraphics canvas */
     public static final int MARGIN = 10;
+
     private static int width;
     private static int height;
 
-    /** @return the width of the field*/
     public static int getWidth() {
         return width;
     }
-
-    /** @return the height of the field*/
     public static int getHeight() {
         return height;
     }
@@ -38,6 +37,10 @@ public class Field {
 
     }
 
+    /**
+     * Displays a picture with instructions
+     * @return the picture with instructions
+     */
     public static Picture instructions() {
 
         int x = ((width-500)/2) + MARGIN;
@@ -48,14 +51,18 @@ public class Field {
         return instructions;
     }
 
+    /**
+     * Deletes a picture
+     * @param picture the picture to be deleted
+     */
     public static void delete(Picture picture) {
         picture.delete();
     }
 
     /**
-     * Creates a placard showing the winner
-     * @param green
-     * @param orange
+     * Displays a placard showing the winner
+     * @param green an instance of ControlledMonster
+     * @param orange an instance of ControlledMonster
      */
     public static void placard(ControlledMonster green, ControlledMonster orange) {
 

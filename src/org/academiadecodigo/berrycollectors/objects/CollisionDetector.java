@@ -9,13 +9,20 @@ public class CollisionDetector {
 
     private static final int REDUCE = 7;
 
-    Collidable[] collidables;
+    private Collidable[] collidables;
 
     public CollisionDetector(Collidable[] collidables) {
         this.collidables = collidables;
     }
 
-    private boolean containsPixel(Collidable collidable, int x, int y) {
+    /**
+     * Checks if a pixel is inside a collidable
+     * @param collidable the collidable to check
+     * @param x the x coordinate of the pixel
+     * @param y the y coordinate of the pixel
+     * @return true if the pixel is inside
+     */
+    private boolean isPixelInside(Collidable collidable, int x, int y) {
 
         return (collidable.getRepresentation().getPicture().getX() <= x &&
                 x <= collidable.getRepresentation().getPicture().getX() + collidable.getRepresentation().getPicture().getWidth()) &&
@@ -23,6 +30,11 @@ public class CollisionDetector {
                 y <= collidable.getRepresentation().getPicture().getY() + collidable.getRepresentation().getPicture().getHeight());
     }
 
+    /**
+     * Gives a collidable that collided
+     * @param collidable the collidable to check collisions with the array
+     * @return the collidable that collided or null
+     */
     public Collidable getCollided(Collidable collidable) {
 
         for (Collidable c : collidables) {
@@ -31,10 +43,10 @@ public class CollisionDetector {
                 continue;
             }
 
-            if (containsPixel(collidable, c.getRepresentation().getPicture().getX()+REDUCE, c.getRepresentation().getPicture().getY()+REDUCE) ||
-                    containsPixel(collidable, c.getRepresentation().getPicture().getX()+REDUCE, c.getRepresentation().getPicture().getY() + c.getRepresentation().getPicture().getHeight()-REDUCE) ||
-                    containsPixel(collidable, c.getRepresentation().getPicture().getX() + c.getRepresentation().getPicture().getWidth()-REDUCE, c.getRepresentation().getPicture().getY()+REDUCE) ||
-                    containsPixel(collidable, c.getRepresentation().getPicture().getX() + c.getRepresentation().getPicture().getWidth()-REDUCE, c.getRepresentation().getPicture().getY() + c.getRepresentation().getPicture().getHeight()-REDUCE)) {
+            if (isPixelInside(collidable, c.getRepresentation().getPicture().getX()+REDUCE, c.getRepresentation().getPicture().getY()+REDUCE) ||
+                    isPixelInside(collidable, c.getRepresentation().getPicture().getX()+REDUCE, c.getRepresentation().getPicture().getY() + c.getRepresentation().getPicture().getHeight()-REDUCE) ||
+                    isPixelInside(collidable, c.getRepresentation().getPicture().getX() + c.getRepresentation().getPicture().getWidth()-REDUCE, c.getRepresentation().getPicture().getY()+REDUCE) ||
+                    isPixelInside(collidable, c.getRepresentation().getPicture().getX() + c.getRepresentation().getPicture().getWidth()-REDUCE, c.getRepresentation().getPicture().getY() + c.getRepresentation().getPicture().getHeight()-REDUCE)) {
 
                 return c;
 
@@ -45,6 +57,11 @@ public class CollisionDetector {
 
     }
 
+    /**
+     *
+     * @param collidable
+     * @return
+     */
     public boolean arrangeCollidables(Collidable collidable) {
 
         Collidable c = getCollided(collidable);

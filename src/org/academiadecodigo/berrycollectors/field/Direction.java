@@ -11,6 +11,10 @@ public enum Direction {
     LEFT,
     RIGHT;
 
+    /**
+     * Obtains the opposite direction
+     * @return the opposite direction
+     */
     public Direction opposite() {
         Direction direction = null;
         switch (this) {
@@ -34,6 +38,10 @@ public enum Direction {
         return direction;
     }
 
+    /**
+     * Obtains a random direction
+     * @return a random direction
+     */
     public static Direction choose() {
 
         int d = RandomGenerator.getRandomByRange(0, values().length-1);

@@ -11,6 +11,10 @@ public class Representation {
     private Picture picture;
     private String[] picPaths;
 
+    /**
+     * Constructs a representation with a random position
+     * @param picPaths an array with all the paths of the images
+     */
     public Representation(String[] picPaths) {
 
         this.picPaths = picPaths;
@@ -27,6 +31,11 @@ public class Representation {
         return picPaths;
     }
 
+    /**
+     * Sets the position of the picture
+     * @param x the leftmost x-coordinate
+     * @param y the topmost y-coordinate
+     */
     public void setPicXY(int x, int y) {
         int xIncrement = x-getPicture().getX();
         int yIncrement = y-getPicture().getY();
@@ -34,6 +43,10 @@ public class Representation {
         getPicture().translate(xIncrement, yIncrement);
     }
 
+    /**
+     * Moves the picture up
+     * @param increment the amount to move up
+     */
     public void moveUp(int increment) {
 
         if (picture.getY() - increment <= Field.MARGIN) {
@@ -43,6 +56,10 @@ public class Representation {
         }
     }
 
+    /**
+     * Moves the picture down
+     * @param increment the amount to move down
+     */
     public void moveDown(int increment) {
 
         if (picture.getY() + increment > Field.MARGIN + Field.getHeight() - picture.getHeight()) {
@@ -52,6 +69,10 @@ public class Representation {
         }
     }
 
+    /**
+     * Moves the picture to the left
+     * @param increment the amount to move left
+     */
     public void moveLeft(int increment) {
 
         if (picture.getX() - increment <= Field.MARGIN) {
@@ -61,6 +82,10 @@ public class Representation {
         }
     }
 
+    /**
+     * Moves the picture to the right
+     * @param increment the amount to move right
+     */
     public void moveRight(int increment) {
 
         if (picture.getX() + increment >= Field.MARGIN + Field.getWidth() - picture.getWidth()) {
@@ -70,6 +95,11 @@ public class Representation {
         }
     }
 
+    /**
+     * Moves in a direction a certain amount
+     * @param direction the direction to move
+     * @param number the amount to move
+     */
     public void moveInDirection(Direction direction, int number) {
         switch (direction) {
             case UP:
@@ -90,6 +120,11 @@ public class Representation {
         }
     }
 
+    /**
+     * Checks if the current position is in the edge
+     * @param direction the current direction
+     * @return true if the position is in the edge
+     */
     public boolean checkPos(Direction direction) {
 
         return (picture.getX() == Field.MARGIN && direction == Direction.LEFT) ||
