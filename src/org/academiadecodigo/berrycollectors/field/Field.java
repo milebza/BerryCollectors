@@ -73,15 +73,11 @@ public class Field {
         rectangle.setColor(Color.PINK);
         rectangle.fill();
 
+        String winnerOrange = "ORANGE is the winner!";
         Text winnerGreen = new Text(widthRec+2*MARGIN+5, heightRec+15, "GREEN is the winner!");
-        Text winnerOrange = new Text(widthRec+2*MARGIN+5, heightRec+15, "ORANGE is the winner!");
 
         if (green.isCrashed()) {
-            winnerOrange.draw();
-        }
-
-        if (orange.isCrashed()) {
-            winnerGreen.draw();
+            winnerGreen.setText(winnerOrange);
         }
 
         if (green.isCrashed() && orange.isCrashed()) {
@@ -90,15 +86,14 @@ public class Field {
 
         if (!green.isCrashed() && !orange.isCrashed()) {
             if (green.getCounter() == orange.getCounter()) {
-                winnerOrange.setText("You both are winners!");
-                winnerOrange.draw();
+                winnerGreen.setText("You both are winners!");
             }
-            if (green.getCounter() > orange.getCounter()) {
-                winnerGreen.draw();
-            } else {
-                winnerOrange.draw();
+            if (green.getCounter() < orange.getCounter()) {
+                winnerGreen.setText(winnerOrange);
             }
         }
+
+        winnerGreen.draw();
     }
 
 }
